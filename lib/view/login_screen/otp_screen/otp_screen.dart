@@ -2,12 +2,12 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:skymark/view/core/colors/colors.dart';
 import 'package:skymark/view/core/size/size.dart';
 import 'package:skymark/view/login_screen/phone_number_screen/phone_number_screen.dart';
+import 'package:skymark/view/login_screen/set_up_profile_screen/set_up_profile_screen.dart';
 
 import '../../core/fonts/fonts.dart';
 
@@ -48,7 +48,11 @@ class OtpScreen extends StatelessWidget {
                     TextSpan(text: ' 00:30', style: GoogleFont.otpTimerColor)
                   ])),
                   commonHeight5,
-                  CommonButtonLogin(buttonText: 'Continue'),
+                  GestureDetector(
+                      onTap: () {
+                        Get.to(() => SetUpProfileScreen());
+                      },
+                      child: const CommonButtonLogin(buttonText: 'Continue')),
                 ],
               )
             ],

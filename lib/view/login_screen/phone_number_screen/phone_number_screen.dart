@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:skymark/view/core/colors/colors.dart';
 import 'package:skymark/view/core/fonts/fonts.dart';
 import 'package:skymark/view/core/size/size.dart';
+import 'package:skymark/view/login_screen/otp_screen/otp_screen.dart';
 
 class PhoneNumberScreen extends StatelessWidget {
   const PhoneNumberScreen({super.key});
@@ -97,7 +99,11 @@ class PhoneNumberScreen extends StatelessWidget {
                 SizedBox(
                   height: height / 2,
                 ),
-                CommonButtonLogin(buttonText: buttonText)
+                GestureDetector(
+                    onTap: () {
+                      Get.to(() => OtpScreen());
+                    },
+                    child: CommonButtonLogin(buttonText: buttonText))
               ],
             ),
           ),

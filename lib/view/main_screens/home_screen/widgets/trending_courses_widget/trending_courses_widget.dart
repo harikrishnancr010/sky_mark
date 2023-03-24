@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:skymark/view/core/colors/colors.dart';
 
-import '../../../core/fonts/fonts.dart';
-import '../../../core/size/size.dart';
+import '../../../../core/fonts/fonts.dart';
+import '../../../../core/size/size.dart';
 
 class TendingCoursesWidget extends StatelessWidget {
   const TendingCoursesWidget({

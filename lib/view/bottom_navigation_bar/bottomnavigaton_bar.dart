@@ -3,7 +3,12 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/instance_manager.dart';
 import 'package:get/state_manager.dart';
 import 'package:skymark/controller/bottom_navigation_controller/bottom_navigation_controller.dart';
-import 'package:skymark/view/home_screen/home_screen.dart';
+import 'package:skymark/view/main_screens/home_screen/home_screen.dart';
+import 'package:skymark/view/main_screens/my_account_screen/my_account_screen.dart';
+import 'package:skymark/view/main_screens/notifications_screen/notifications_screen.dart';
+import 'package:skymark/view/main_screens/select_country_screen/select_country_screen.dart';
+
+import '../main_screens/select_courses_screen/select_courses_screen.dart';
 
 class BottomNavigationBarScreen extends StatelessWidget {
   BottomNavigationBarScreen({super.key});
@@ -12,15 +17,10 @@ class BottomNavigationBarScreen extends StatelessWidget {
 
   final List<Widget> data = [
     HomeScreen(),
-    Center(
-      child: Text('Not 2'),
-    ),
-    Center(
-      child: Text('Not 3'),
-    ),
-    Center(
-      child: Text('Not 4'),
-    )
+    SelectASelectCoursesScreen(),
+    SelectCountryScreen(),
+    NotificationsScreen(),
+    MyAccountScreen()
   ];
   @override
   Widget build(BuildContext context) {
@@ -62,6 +62,14 @@ class BottomNavigationBarScreen extends StatelessWidget {
                       ),
                       icon: SvgPicture.asset(
                         'assets/icons/book-bottombar.svg',
+                      ),
+                      label: ''),
+                  BottomNavigationBarItem(
+                      activeIcon: SvgPicture.asset(
+                        'assets/icons/buildings-active.svg',
+                      ),
+                      icon: SvgPicture.asset(
+                        'assets/icons/buildings-bottombar.svg',
                       ),
                       label: ''),
                   BottomNavigationBarItem(

@@ -1,13 +1,14 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
 import 'package:skymark/view/core/colors/colors.dart';
 import 'package:skymark/view/core/fonts/fonts.dart';
 import 'package:skymark/view/core/size/size.dart';
-import 'package:skymark/view/home_screen/widgets/destination/destination_widget.dart';
-import 'package:skymark/view/home_screen/widgets/head_text_widget/head_text.dart';
-import 'package:skymark/view/home_screen/widgets/popular_univercity_widget/popular_univercity_widget.dart';
-import 'package:skymark/view/home_screen/widgets/trending_courses_widget/trending_courses_widget.dart';
+import 'package:skymark/view/main_screens/home_screen/widgets/destination/destination_widget.dart';
+import 'package:skymark/view/main_screens/home_screen/widgets/head_text_widget/head_text.dart';
+import 'package:skymark/view/main_screens/home_screen/widgets/popular_univercity_widget/popular_univercity_widget.dart';
+import 'package:skymark/view/main_screens/home_screen/widgets/trending_courses_widget/trending_courses_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -53,7 +54,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                       Shimmer(
                           enabled: false,
-                          direction: ShimmerDirection.fromLTRB(),
+                          direction: const ShimmerDirection.fromLTRB(),
                           child: Container(
                             width: 66,
                             height: 66,
@@ -67,31 +68,8 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                commonHeight8,
-                Padding(
-                  padding: const EdgeInsets.all(24),
-                  child: Container(
-                    width: double.infinity,
-                    height: 58,
-                    decoration: BoxDecoration(
-                        color: const Color.fromARGB(30, 255, 255, 255),
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Row(
-                      children: [
-                        commonWidth15,
-                        Icon(
-                          Icons.search,
-                          color: Skymark.searchLabelColor,
-                        ),
-                        commonWidth8,
-                        Text(
-                          'Search...',
-                          style: GoogleFont.serarchLabelStyle,
-                        )
-                      ],
-                    ),
-                  ),
-                ),
+                commonHeight15,
+                const SearchTileWidget(),
               ],
             ),
           ),
@@ -127,6 +105,56 @@ class HomeScreen extends StatelessWidget {
             ],
           ))
         ],
+      ),
+    );
+  }
+}
+
+class SearchTileWidget extends StatelessWidget {
+  const SearchTileWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 24, right: 24, top: 18),
+      child: Container(
+        width: double.infinity,
+        height: 58,
+        decoration: BoxDecoration(
+            color: const Color.fromARGB(30, 255, 255, 255),
+            borderRadius: BorderRadius.circular(20)),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 15, right: 15),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  // Icon(
+                  //   Icons.search,
+                  //   color: Skymark.searchLabelColor,
+                  // ),
+                  SvgPicture.asset(
+                    'assets/icons/search-normal.svg',
+                    width: 18,
+                    height: 18,
+                  ),
+                  commonWidth8,
+                  Text(
+                    'Search...',
+                    style: GoogleFont.serarchLabelStyle,
+                  ),
+                ],
+              ),
+              Icon(
+                Icons.filter_list,
+                color: Skymark.whiteColor,
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
