@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/instance_manager.dart';
 import 'package:get/state_manager.dart';
 import 'package:skymark/controller/bottom_navigation_controller/bottom_navigation_controller.dart';
+import 'package:skymark/core/colors/colors.dart';
 import 'package:skymark/view/main_screens/home_screen/home_screen.dart';
 import 'package:skymark/view/main_screens/my_account_screen/my_account_screen.dart';
 import 'package:skymark/view/main_screens/notifications_screen/notifications_screen.dart';
@@ -35,8 +36,9 @@ class BottomNavigationBarScreen extends StatelessWidget {
           return Container(
             width: double.infinity,
             height: 70,
-            decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(50)),
+            decoration: BoxDecoration(boxShadow: [
+              BoxShadow(blurRadius: 25, color: Skymark.shadowColor)
+            ], color: Colors.white, borderRadius: BorderRadius.circular(50)),
             child: BottomNavigationBar(
                 showSelectedLabels: false,
                 showUnselectedLabels: false,

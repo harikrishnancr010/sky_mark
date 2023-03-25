@@ -1,12 +1,9 @@
-import 'package:country_list_picker/country_list_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:skymark/view/core/colors/colors.dart';
-import 'package:skymark/view/core/fonts/fonts.dart';
-import 'package:skymark/view/core/size/size.dart';
+import 'package:skymark/core/colors/colors.dart';
+import 'package:skymark/core/fonts/fonts.dart';
+import 'package:skymark/core/size/size.dart';
 import 'package:skymark/view/login_screen/otp_screen/otp_screen.dart';
 
 class PhoneNumberScreen extends StatelessWidget {
@@ -18,9 +15,9 @@ class PhoneNumberScreen extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
 
     return Scaffold(
+      extendBody: true,
       appBar: appBarCommonLogin(),
-      body: SingleChildScrollView(
-          child: Column(
+      body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Container(
@@ -96,19 +93,22 @@ class PhoneNumberScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(
-                  height: height / 2,
-                ),
-                GestureDetector(
-                    onTap: () {
-                      Get.to(() => OtpScreen());
-                    },
-                    child: CommonButtonLogin(buttonText: buttonText))
+                // SizedBox(
+                //   height: height / 2,
+                // ),
               ],
             ),
           ),
         ],
-      )),
+      ),
+      bottomNavigationBar: GestureDetector(
+          onTap: () {
+            Get.to(() => OtpScreen());
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: CommonButtonLogin(buttonText: buttonText),
+          )),
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:skymark/view/core/colors/colors.dart';
+import 'package:skymark/core/colors/colors.dart';
 
 class GoogleFont {
   //Golos Text
@@ -44,8 +44,28 @@ class GoogleFont {
   static TextStyle selectCountrySubText = GoogleFonts.poppins(
       fontSize: 10, fontWeight: FontWeight.w400, color: Skymark.greyColor);
 
+  static TextStyle cousesListCatSubTextBlack = GoogleFonts.poppins(
+      fontSize: 10, fontWeight: FontWeight.w400, color: Skymark.blackColor);
+
   static TextStyle homeTileSubTextStyle = GoogleFonts.poppins(
       fontSize: 12, fontWeight: FontWeight.w400, color: Skymark.greyColor);
+
+  static TextStyle choiceChipStylewhite = GoogleFonts.poppins(
+      fontSize: 12, fontWeight: FontWeight.w600, color: Skymark.whiteColor);
+
+  static TextStyle choiceChipStyleblue = GoogleFonts.poppins(
+      fontSize: 12,
+      fontWeight: FontWeight.w600,
+      color: Skymark.primaryColorBlue2E);
+
+  static TextStyle courcesDetailsColumnSecText = GoogleFonts.poppins(
+      fontSize: 12, fontWeight: FontWeight.w500, color: Skymark.blackColor);
+
+  static TextStyle courcesDetailsColumnSecTextgreyColor = GoogleFonts.poppins(
+      fontSize: 12, fontWeight: FontWeight.w500, color: Skymark.greyColor);
+
+  static TextStyle courseListScreenHeadTextStyle = GoogleFonts.poppins(
+      fontSize: 12, fontWeight: FontWeight.w700, color: Skymark.blackColor);
 
   static TextStyle otpTimerColor = GoogleFonts.poppins(
       fontSize: 14,
@@ -80,6 +100,19 @@ class GoogleFont {
 
   static TextStyle destinationDetailDiscriptionStyleBlack = GoogleFonts.poppins(
       fontSize: 14, fontWeight: FontWeight.w400, color: Skymark.blackColor);
+
+  static TextStyle documentHeadTextStyle = GoogleFonts.poppins(
+      fontSize: 14,
+      fontWeight: FontWeight.w600,
+      color: Skymark.primaryColorBlue2E);
+
+  static TextStyle ratilngTileTextStyle = GoogleFonts.poppins(
+      fontSize: 10, fontWeight: FontWeight.w500, color: Skymark.blackColor);
+
+  static TextStyle courcesDetailsSubTextBlue = GoogleFonts.poppins(
+      fontSize: 14,
+      fontWeight: FontWeight.w600,
+      color: Skymark.primaryColorBlue2E);
 
   // static TextStyle homeTileHeadTextStyleddddd = GoogleFonts.Golos Text(
   //     fontSize: 10, fontWeight: FontWeight.w400, color: Skymark.blackColor);

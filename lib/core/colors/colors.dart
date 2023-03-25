@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:flutter/cupertino.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class Skymark {
@@ -16,5 +17,9 @@ class Skymark {
   static Color whitef7 = HexColor('#F7F7F7');
   static Color whitef2 = HexColor('#F2F4FF');
 
+  static Color shadowColor = HexColor('#EEF3FA');
+
   static Color searchLabelColor = const Color.fromARGB(78, 255, 255, 255);
 }
+
+final shadowCommon = [BoxShadow(blurRadius: 25, color: Skymark.shadowColor)];

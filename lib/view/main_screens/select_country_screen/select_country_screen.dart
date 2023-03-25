@@ -1,48 +1,64 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:skymark/view/core/colors/colors.dart';
-import 'package:skymark/view/core/fonts/fonts.dart';
+import 'package:skymark/controller/select_country_screen_controller/select_country_screen_controller.dart';
+import 'package:skymark/core/colors/colors.dart';
+import 'package:skymark/core/fonts/fonts.dart';
+import 'package:skymark/view/main_screens/select_country_screen/shimmer_effect_screen/select_country_shimmer.dart';
+import 'package:skymark/view/seondary_screens/destination_details/destination_detailed_screen.dart';
 
 class SelectCountryScreen extends StatelessWidget {
-  const SelectCountryScreen({super.key});
-
+  SelectCountryScreen({super.key});
+  final selctCountryControllerGet = Get.put(SelectCountryScreenController());
   @override
   Widget build(BuildContext context) {
+    selctCountryControllerGet.isLoading();
     return Scaffold(
       body: Column(
         children: [
           AppBarCommonHome(isBackbutton: false, headText: 'Select Country'),
-          Expanded(
-              child: ListView(
-            physics: BouncingScrollPhysics(),
-            children: List.generate(5, (index) {
-              return Padding(
-                padding: const EdgeInsets.only(bottom: 16, left: 24, right: 24),
-                child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Skymark.whiteColor,
-                  ),
-                  child: ListTile(
-                    title: Text(
-                      'United Kingdom',
-                      style: GoogleFont.selectCountryHeadText,
-                    ),
-                    subtitle: Text(
-                      '1200 University',
-                      style: GoogleFont.selectCountrySubText,
-                    ),
-                    trailing: CircleAvatar(
-                      radius: 22,
-                      backgroundImage: NetworkImage(
-                          'https://cdn.pixabay.com/photo/2015/11/06/13/29/union-jack-1027898__340.jpg'),
-                    ),
-                  ),
-                ),
-              );
-            }),
-          ))
+          GetBuilder<SelectCountryScreenController>(
+              builder: (slectCountryController) {
+            return Expanded(
+                child: !slectCountryController.islading
+                    ? ListView(
+                        physics: const BouncingScrollPhysics(),
+                        children: List.generate(5, (index) {
+                          return GestureDetector(
+                            onTap: () {
+                              Get.to(() => DestinationDetailedScreem());
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                  bottom: 16, left: 24, right: 24),
+                              child: Container(
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Skymark.whiteColor,
+                                ),
+                                child: ListTile(
+                                  title: Text(
+                                    'United Kingdom',
+                                    style: GoogleFont.selectCountryHeadText,
+                                  ),
+                                  subtitle: Text(
+                                    '1200 University',
+                                    style: GoogleFont.selectCountrySubText,
+                                  ),
+                                  trailing: const CircleAvatar(
+                                    backgroundColor: Colors.transparent,
+                                    radius: 22,
+                                    backgroundImage: NetworkImage(
+                                        'https://cdn.pixabay.com/photo/2015/11/06/13/29/union-jack-1027898__340.jpg'),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          );
+                        }),
+                      )
+                    : SlectCountryShimmerEffectListTile());
+          })
         ],
       ),
     );

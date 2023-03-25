@@ -18,6 +18,9 @@ const commonHeight8 = SizedBox(
   height: 8,
 );
 
+const commonHeight3 = SizedBox(
+  height: 3,
+);
 //-------------Common width ------------------------
 
 const commonWidth10 = SizedBox(

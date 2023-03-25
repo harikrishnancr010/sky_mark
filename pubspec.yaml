@@ -37,9 +37,7 @@ dependencies:
   hexcolor: ^3.0.1
   google_fonts: ^4.0.3
   flutter_svg: ^2.0.4
-  shimmer_animation: ^2.1.0+1
   get: ^4.6.5
-  country_list_picker: ^1.0.2
   shimmer: ^2.0.0
 
 dev_dependencies:

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:skymark/view/core/colors/colors.dart';
-import 'package:skymark/view/core/fonts/fonts.dart';
-import 'package:skymark/view/core/size/size.dart';
+import 'package:skymark/core/colors/colors.dart';
+import 'package:skymark/core/fonts/fonts.dart';
+import 'package:skymark/core/size/size.dart';
 import 'package:skymark/view/main_screens/select_country_screen/select_country_screen.dart';
 
 class NotificationsScreen extends StatelessWidget {

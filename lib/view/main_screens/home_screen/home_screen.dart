@@ -1,10 +1,9 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:shimmer_animation/shimmer_animation.dart';
-import 'package:skymark/view/core/colors/colors.dart';
-import 'package:skymark/view/core/fonts/fonts.dart';
-import 'package:skymark/view/core/size/size.dart';
+import 'package:skymark/core/colors/colors.dart';
+import 'package:skymark/core/fonts/fonts.dart';
+import 'package:skymark/core/size/size.dart';
 import 'package:skymark/view/main_screens/home_screen/widgets/destination/destination_widget.dart';
 import 'package:skymark/view/main_screens/home_screen/widgets/head_text_widget/head_text.dart';
 import 'package:skymark/view/main_screens/home_screen/widgets/popular_univercity_widget/popular_univercity_widget.dart';
@@ -43,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                             'Hi, Gary Torres',
                             style: GoogleFont.homeAppBarTextStyle,
                           ),
-                          Container(
+                          SizedBox(
                             width: width / 1.65,
                             child: Text(
                               'Many desktop publishing packages and web page editors.',
@@ -52,19 +51,16 @@ class HomeScreen extends StatelessWidget {
                           )
                         ],
                       ),
-                      Shimmer(
-                          enabled: false,
-                          direction: const ShimmerDirection.fromLTRB(),
-                          child: Container(
-                            width: 66,
-                            height: 66,
-                            decoration: BoxDecoration(
-                                color: const Color.fromARGB(255, 219, 219, 219),
-                                image: const DecorationImage(
-                                    image: NetworkImage(
-                                        'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60')),
-                                borderRadius: BorderRadius.circular(20)),
-                          ))
+                      Container(
+                        width: 66,
+                        height: 66,
+                        decoration: BoxDecoration(
+                            color: const Color.fromARGB(255, 219, 219, 219),
+                            image: const DecorationImage(
+                                image: NetworkImage(
+                                    'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60')),
+                            borderRadius: BorderRadius.circular(20)),
+                      )
                     ],
                   ),
                 ),

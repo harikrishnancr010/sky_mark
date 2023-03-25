@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:skymark/view/bottom_navigation_bar/bottomnavigaton_bar.dart';
-import 'package:skymark/view/core/colors/colors.dart';
+import 'package:skymark/core/colors/colors.dart';
 import 'package:skymark/view/login_screen/phone_number_screen/phone_number_screen.dart';
 
-import '../../core/fonts/fonts.dart';
-import '../../core/size/size.dart';
+import '../../../core/fonts/fonts.dart';
+import '../../../core/size/size.dart';
 
 class SetUpProfileScreen extends StatelessWidget {
   SetUpProfileScreen({super.key});
@@ -94,17 +94,17 @@ class SetUpProfileScreen extends StatelessWidget {
                       ),
                     ),
                   )),
-              SizedBox(
-                height: height / 3.5,
-              ),
-              GestureDetector(
-                  onTap: () {
-                    Get.offAll(() => BottomNavigationBarScreen());
-                  },
-                  child: CommonButtonLogin(buttonText: 'Creates an account'))
             ],
           ),
         ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(16),
+        child: GestureDetector(
+            onTap: () {
+              Get.offAll(() => BottomNavigationBarScreen());
+            },
+            child: CommonButtonLogin(buttonText: 'Creates an account')),
       ),
     );
   }

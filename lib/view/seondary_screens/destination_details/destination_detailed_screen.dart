@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:skymark/view/core/colors/colors.dart';
-import 'package:skymark/view/core/fonts/fonts.dart';
-import 'package:skymark/view/core/size/size.dart';
+import 'package:skymark/core/colors/colors.dart';
+import 'package:skymark/core/fonts/fonts.dart';
+import 'package:skymark/core/size/size.dart';
 import 'package:skymark/view/login_screen/phone_number_screen/phone_number_screen.dart';
 
 class DestinationDetailedScreem extends StatelessWidget {
@@ -10,12 +10,13 @@ class DestinationDetailedScreem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
       extendBody: true,
       body: Column(
         children: [
           Container(
-            height: 290,
+            height: 287,
             child: Stack(
               children: [
                 Image.network(
@@ -45,9 +46,15 @@ class DestinationDetailedScreem extends StatelessWidget {
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.white.withOpacity(0.5),
-                                blurRadius: 6,
-                                spreadRadius: 4,
-                              ),
+                                // color: Skymark.shadowColor,
+                                blurRadius: 15,
+                                spreadRadius: 0,
+                              )
+                              // BoxShadow(
+                              //   color: Colors.white.withOpacity(0.5),
+                              //   blurRadius: 6,
+                              //   spreadRadius: 4,
+                              // ),
                             ]),
 
                         child: Row(
@@ -62,21 +69,31 @@ class DestinationDetailedScreem extends StatelessWidget {
                                           'https://media.istockphoto.com/id/1181025257/photo/united-kingdom-flag.jpg?b=1&s=170667a&w=0&k=20&c=OVKUajIaOzJLP4of3ts3DXqiUOrTERCKSBp9JwFsJCs='),
                                       fit: BoxFit.cover),
                                   borderRadius: BorderRadius.circular(25),
-                                  color: Colors.amber),
+                                  color: Colors.grey[300]),
                             ),
                             commonWidth15,
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text(
-                                  'United Kingdom',
-                                  style: GoogleFont
-                                      .destinationDetailsHeadTextStyle,
+                                SizedBox(
+                                  width: width > 359 ? 230 : 190,
+                                  child: Text(
+                                    'United Kingdom',
+                                    style: GoogleFont
+                                        .destinationDetailsHeadTextStyle,
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
                                 ),
-                                Text(
-                                  'London',
-                                  style: GoogleFont.loginScreenSubTextStyle,
+                                SizedBox(
+                                  width: width > 359 ? 230 : 190,
+                                  child: Text(
+                                    'London',
+                                    style: GoogleFont.loginScreenSubTextStyle,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
                                 )
                               ],
                             )
@@ -206,8 +223,8 @@ class BackArrowWhite extends StatelessWidget {
         Get.back();
       },
       child: Container(
-        width: 40,
-        height: 40,
+        width: 36,
+        height: 36,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             color: const Color.fromARGB(80, 255, 255, 255)),

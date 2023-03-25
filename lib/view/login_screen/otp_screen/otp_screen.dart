@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:skymark/view/core/colors/colors.dart';
-import 'package:skymark/view/core/size/size.dart';
+import 'package:skymark/core/colors/colors.dart';
+import 'package:skymark/core/size/size.dart';
 import 'package:skymark/view/login_screen/phone_number_screen/phone_number_screen.dart';
 import 'package:skymark/view/login_screen/set_up_profile_screen/set_up_profile_screen.dart';
 
-import '../../core/fonts/fonts.dart';
+import '../../../core/fonts/fonts.dart';
 
 class OtpScreen extends StatelessWidget {
   const OtpScreen({super.key});
@@ -19,45 +19,42 @@ class OtpScreen extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: appBarCommonLogin(),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Enter your \nverification code',
-                style: GoogleFont.loginScreenHeadTextStyle,
-              ),
-              commonHeight10,
-              Text(
-                'Please type the verification code sent to \n+91 6292046986',
-                style: GoogleFont.loginScreenSubTextStyle,
-              ),
-              commonHeight20,
-              OtpFormWidget(),
-              SizedBox(
-                height: height / 2.15,
-              ),
-              Column(
-                children: [
-                  RichText(
-                      text: TextSpan(children: [
-                    TextSpan(
-                        text: 'Resend in', style: GoogleFont.resentOtpTextClor),
-                    TextSpan(text: ' 00:30', style: GoogleFont.otpTimerColor)
-                  ])),
-                  commonHeight5,
-                  GestureDetector(
-                      onTap: () {
-                        Get.to(() => SetUpProfileScreen());
-                      },
-                      child: const CommonButtonLogin(buttonText: 'Continue')),
-                ],
-              )
-            ],
-          ),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Enter your \nverification code',
+                  style: GoogleFont.loginScreenHeadTextStyle,
+                ),
+                commonHeight10,
+                Text(
+                  'Please type the verification code sent to \n+91 6292046986',
+                  style: GoogleFont.loginScreenSubTextStyle,
+                ),
+                commonHeight20,
+                OtpFormWidget(),
+              ],
+            ),
+            RichText(
+                text: TextSpan(children: [
+              TextSpan(text: 'Resend in', style: GoogleFont.resentOtpTextClor),
+              TextSpan(text: ' 00:30', style: GoogleFont.otpTimerColor)
+            ])),
+          ],
         ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(16),
+        child: GestureDetector(
+            onTap: () {
+              Get.to(() => SetUpProfileScreen());
+            },
+            child: const CommonButtonLogin(buttonText: 'Continue')),
       ),
     );
   }
