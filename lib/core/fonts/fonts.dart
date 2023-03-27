@@ -106,6 +106,14 @@ class GoogleFont {
       fontWeight: FontWeight.w600,
       color: Skymark.primaryColorBlue2E);
 
+  static TextStyle filterScrenChoicechipTextStyleGrey = GoogleFonts.poppins(
+      fontSize: 16, fontWeight: FontWeight.w400, color: Skymark.greyColor);
+
+  static TextStyle filterScrenChoicechipTextStyleblue2e = GoogleFonts.poppins(
+      fontSize: 16,
+      fontWeight: FontWeight.w400,
+      color: Skymark.primaryColorBlue2E);
+
   static TextStyle ratilngTileTextStyle = GoogleFonts.poppins(
       fontSize: 10, fontWeight: FontWeight.w500, color: Skymark.blackColor);
 

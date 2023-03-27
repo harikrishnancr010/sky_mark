@@ -1,9 +1,11 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:skymark/core/colors/colors.dart';
 import 'package:skymark/core/fonts/fonts.dart';
 import 'package:skymark/core/size/size.dart';
+import 'package:skymark/view/filter_screen/filter_screen.dart';
 import 'package:skymark/view/main_screens/home_screen/widgets/destination/destination_widget.dart';
 import 'package:skymark/view/main_screens/home_screen/widgets/head_text_widget/head_text.dart';
 import 'package:skymark/view/main_screens/home_screen/widgets/popular_univercity_widget/popular_univercity_widget.dart';
@@ -144,9 +146,14 @@ class SearchTileWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              Icon(
-                Icons.filter_list,
-                color: Skymark.whiteColor,
+              GestureDetector(
+                onTap: () {
+                  Get.to(() => FilterScreen());
+                },
+                child: Icon(
+                  Icons.filter_list,
+                  color: Skymark.whiteColor,
+                ),
               )
             ],
           ),

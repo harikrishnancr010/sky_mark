@@ -88,8 +88,8 @@ class CoursesListScreenBaseCata extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Container(
-                                    width: width > 359 ? 200 : 190,
+                                  SizedBox(
+                                    width: width > 359 ? 200 : 160,
                                     child: Text(
                                       'MBA - Master of Business Administartion',
                                       style: GoogleFont
@@ -98,8 +98,8 @@ class CoursesListScreenBaseCata extends StatelessWidget {
                                       overflow: TextOverflow.ellipsis,
                                     ),
                                   ),
-                                  Container(
-                                    width: width > 359 ? 200 : 190,
+                                  SizedBox(
+                                    width: width > 359 ? 200 : 160,
                                     child: Text(
                                       'University of Oxford | USA',
                                       style: GoogleFont.homeTileSubTextStyle,

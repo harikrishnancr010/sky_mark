@@ -39,6 +39,8 @@ dependencies:
   flutter_svg: ^2.0.4
   get: ^4.6.5
   shimmer: ^2.0.0
+  syncfusion_flutter_sliders: ^20.4.54
+  card_swiper: ^2.0.4
 
 dev_dependencies:
   flutter_test:

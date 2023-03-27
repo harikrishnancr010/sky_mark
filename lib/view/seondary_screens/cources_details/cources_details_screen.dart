@@ -294,7 +294,7 @@ class CourseDetailsTile extends StatelessWidget {
                                     color: Colors.black),
                               ),
                               commonWidth20,
-                              Container(
+                              SizedBox(
                                 width: width > 359 ? 235 : 190,
                                 child: const Text(
                                   'Maecenas posuere magna nec commodo ullamcorper.',

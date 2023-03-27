@@ -15,7 +15,8 @@ class SelectCountryScreen extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          AppBarCommonHome(isBackbutton: false, headText: 'Select Country'),
+          const AppBarCommonHome(
+              isBackbutton: false, headText: 'Select Country'),
           GetBuilder<SelectCountryScreenController>(
               builder: (slectCountryController) {
             return Expanded(
@@ -82,7 +83,7 @@ class AppBarCommonHome extends StatelessWidget {
       height: 110,
       decoration: BoxDecoration(
           color: Skymark.secondaryColorBlue25,
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(50),
               bottomRight: Radius.circular(50))),
       child: Padding(
@@ -91,7 +92,7 @@ class AppBarCommonHome extends StatelessWidget {
             ? Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CommonBackArrow(),
+                  BackArrowWhite(),
                   Text(
                     headText,
                     style: GoogleFont.homeAppBarTextStyle,
