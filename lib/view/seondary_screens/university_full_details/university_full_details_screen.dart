@@ -206,7 +206,7 @@ class UniversityFullDetailsScreen extends StatelessWidget {
                                               ),
                                             ),
                                             commonWidth15,
-                                            Container(
+                                            SizedBox(
                                               width: width / 2.74,
                                               height: 60,
                                               child: Row(
