@@ -16,6 +16,11 @@ class GoogleFont {
   static TextStyle myAccountUserNameStyle = GoogleFonts.workSans(
       fontSize: 16, fontWeight: FontWeight.w700, color: Skymark.blackColor);
 
+  static TextStyle eventScreenTextStyleBlue = GoogleFonts.workSans(
+      fontSize: 14,
+      fontWeight: FontWeight.w500,
+      color: Skymark.primaryColorBlue2E);
+
 //--------------------Golos Text-----------------------------
 
   static TextStyle loginScreenSubTextStyle = GoogleFonts.poppins(
@@ -80,6 +85,11 @@ class GoogleFont {
 
   static TextStyle myAccountScreenHeadtext = GoogleFonts.poppins(
       fontSize: 18, fontWeight: FontWeight.w500, color: Skymark.blackColor);
+
+  static TextStyle universityRankingsLeadingTextStyle = GoogleFonts.poppins(
+      fontSize: 18,
+      fontWeight: FontWeight.w700,
+      color: Skymark.primaryColorBlue2E);
 
   static TextStyle myAccountScreenSubtext = GoogleFonts.poppins(
       fontSize: 15, fontWeight: FontWeight.w500, color: Skymark.blackColor);

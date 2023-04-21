@@ -2,10 +2,12 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:skymark/core/colors/colors.dart';
 import 'package:skymark/core/fonts/fonts.dart';
 import 'package:skymark/core/size/size.dart';
 import 'package:skymark/view/main_screens/select_country_screen/select_country_screen.dart';
+import 'package:skymark/view/my_account_screens/event_screen/event_screen.dart';
 
 class MyAccountScreen extends StatelessWidget {
   const MyAccountScreen({super.key});
@@ -89,15 +91,16 @@ class MyAccountScreen extends StatelessWidget {
                           log('My application');
                         },
                         child: const MyAccountSubTextFullTile(
-                            svgIcons: 'assets/icons/document-upload.svg',
+                            svgIcons: 'assets/icons/myapplication.svg',
                             title: 'My application'),
                       ),
                       GestureDetector(
                         onTap: () {
                           log('Events');
+                          Get.to(() => EventsScreen());
                         },
                         child: const MyAccountSubTextFullTile(
-                            svgIcons: 'assets/icons/document-upload.svg',
+                            svgIcons: 'assets/icons/events.svg',
                             title: 'Events'),
                       ),
                       GestureDetector(
@@ -105,7 +108,7 @@ class MyAccountScreen extends StatelessWidget {
                           log('Zoom Meeting');
                         },
                         child: const MyAccountSubTextFullTile(
-                            svgIcons: 'assets/icons/document-upload.svg',
+                            svgIcons: 'assets/icons/zoom.svg',
                             title: 'Zoom Meeting'),
                       ),
                       commonHeight5,
@@ -119,7 +122,7 @@ class MyAccountScreen extends StatelessWidget {
                           log('Change password');
                         },
                         child: const MyAccountSubTextFullTile(
-                            svgIcons: 'assets/icons/document-upload.svg',
+                            svgIcons: 'assets/icons/changepassword.svg',
                             title: 'Change password'),
                       ),
                       GestureDetector(
@@ -127,7 +130,7 @@ class MyAccountScreen extends StatelessWidget {
                           log('Delete My Account');
                         },
                         child: const MyAccountSubTextFullTile(
-                            svgIcons: 'assets/icons/document-upload.svg',
+                            svgIcons: 'assets/icons/deleteac.svg',
                             title: 'Delete My Account'),
                       ),
                       commonHeight15,
@@ -140,7 +143,7 @@ class MyAccountScreen extends StatelessWidget {
                           log('About Us');
                         },
                         child: const MyAccountSubTextFullTile(
-                            svgIcons: 'assets/icons/document-upload.svg',
+                            svgIcons: 'assets/icons/aboutus.svg',
                             title: 'About Us'),
                       ),
                       GestureDetector(
@@ -148,7 +151,7 @@ class MyAccountScreen extends StatelessWidget {
                           log('Terms of Use');
                         },
                         child: const MyAccountSubTextFullTile(
-                            svgIcons: 'assets/icons/document-upload.svg',
+                            svgIcons: 'assets/icons/terms.svg',
                             title: 'Terms of Use'),
                       ),
                       GestureDetector(
@@ -156,7 +159,7 @@ class MyAccountScreen extends StatelessWidget {
                           log('Privacy Policy');
                         },
                         child: const MyAccountSubTextFullTile(
-                            svgIcons: 'assets/icons/document-upload.svg',
+                            svgIcons: 'assets/icons/privacy.svg',
                             title: 'Privacy Policy'),
                       ),
                       GestureDetector(
@@ -164,15 +167,14 @@ class MyAccountScreen extends StatelessWidget {
                           log("FAQ’s");
                         },
                         child: const MyAccountSubTextFullTile(
-                            svgIcons: 'assets/icons/document-upload.svg',
-                            title: "FAQ’s"),
+                            svgIcons: 'assets/icons/faq.svg', title: "FAQ’s"),
                       ),
                       GestureDetector(
                         onTap: () {
                           log('Contact');
                         },
                         child: const MyAccountSubTextFullTile(
-                            svgIcons: 'assets/icons/document-upload.svg',
+                            svgIcons: 'assets/icons/contact.svg',
                             title: 'Contact'),
                       ),
                     ],

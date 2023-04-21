@@ -17,40 +17,7 @@ class CoursesListScreenBaseCata extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Container(
-            width: double.infinity,
-            height: 186,
-            decoration: BoxDecoration(
-                color: Skymark.secondaryColorBlue25,
-                borderRadius: const BorderRadius.only(
-                    bottomLeft: Radius.circular(50),
-                    bottomRight: Radius.circular(50))),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                commonHeight20,
-                commonHeight20,
-                Padding(
-                  padding: const EdgeInsets.only(left: 18, right: 18),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      BackArrowWhite(),
-                      Text(
-                        'Management',
-                        style: GoogleFont.homeAppBarTextStyle,
-                      ),
-                      const SizedBox(
-                        width: 25,
-                        height: 25,
-                      )
-                    ],
-                  ),
-                ),
-                const SearchTileWidget()
-              ],
-            ),
-          ),
+          const AppbarWithSearchBack(appBarHead: 'Management'),
           Expanded(
               child: ListView(
             physics: const BouncingScrollPhysics(),
@@ -151,6 +118,53 @@ class CoursesListScreenBaseCata extends StatelessWidget {
                       ),
                     )),
           ))
+        ],
+      ),
+    );
+  }
+}
+
+class AppbarWithSearchBack extends StatelessWidget {
+  const AppbarWithSearchBack({
+    super.key,
+    required this.appBarHead,
+  });
+
+  final String appBarHead;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      height: 186,
+      decoration: BoxDecoration(
+          color: Skymark.secondaryColorBlue25,
+          borderRadius: const BorderRadius.only(
+              bottomLeft: Radius.circular(50),
+              bottomRight: Radius.circular(50))),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          commonHeight20,
+          commonHeight20,
+          Padding(
+            padding: const EdgeInsets.only(left: 18, right: 18),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const BackArrowWhite(),
+                Text(
+                  appBarHead,
+                  style: GoogleFont.homeAppBarTextStyle,
+                ),
+                const SizedBox(
+                  width: 25,
+                  height: 25,
+                )
+              ],
+            ),
+          ),
+          const SearchTileWidget()
         ],
       ),
     );

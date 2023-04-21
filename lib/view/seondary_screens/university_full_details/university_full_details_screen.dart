@@ -6,6 +6,7 @@ import 'package:skymark/core/colors/colors.dart';
 import 'package:skymark/core/fonts/fonts.dart';
 import 'package:skymark/core/size/size.dart';
 import 'package:skymark/dummy.dart';
+import 'package:skymark/view/login_screen/phone_number_screen/phone_number_screen.dart';
 import 'package:skymark/view/seondary_screens/destination_details/destination_detailed_screen.dart';
 import 'package:skymark/view/seondary_screens/university_full_details/widget/image_swiper_widget.dart';
 
@@ -174,138 +175,318 @@ class UniversityFullDetailsScreen extends StatelessWidget {
                                 .destinationDetailDiscriptionStyleBlack,
                           ),
                           commonHeight10,
-                          ListView(
-                            shrinkWrap: true,
-                            physics: NeverScrollableScrollPhysics(),
-                            children: List.generate(6, (index) {
-                              log('${width / 2.74}');
-                              return width > 359
-                                  ? Column(
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Container(
-                                              width: width / 2.74,
-                                              height: 60,
-                                              child: Row(
-                                                children: [
-                                                  SvgPicture.asset(
-                                                    'assets/icons/buildings.svg',
-                                                    // ignore: deprecated_member_use
-                                                    color: Skymark.greyColor,
-                                                    height: 20,
-                                                    width: 20,
-                                                  ),
-                                                  commonWidth15,
-                                                  Text(
-                                                    'Sports Complex',
-                                                    style: GoogleFont
-                                                        .courcesDetailsColumnSecText,
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                            commonWidth15,
-                                            SizedBox(
-                                              width: width / 2.74,
-                                              height: 60,
-                                              child: Row(
-                                                children: [
-                                                  SvgPicture.asset(
-                                                    'assets/icons/buildings.svg',
-                                                    // ignore: deprecated_member_use
-                                                    color: Skymark.greyColor,
-                                                    height: 20,
-                                                    width: 20,
-                                                  ),
-                                                  commonWidth15,
-                                                  Text(
-                                                    'Sports Complex',
-                                                    style: GoogleFont
-                                                        .courcesDetailsColumnSecText,
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        const Divider(),
-                                        commonHeight5,
-                                      ],
-                                    )
-                                  : SizedBox(
-                                      width: width / 2.74,
-                                      height: 60,
-                                      child: Row(
-                                        children: [
-                                          SvgPicture.asset(
-                                            'assets/icons/buildings.svg',
-                                            // ignore: deprecated_member_use
-                                            color: Skymark.greyColor,
-                                            height: 20,
-                                            width: 20,
-                                          ),
-                                          commonWidth15,
-                                          Text(
-                                            'Sports Complex',
-                                            style: GoogleFont
-                                                .courcesDetailsColumnSecText,
-                                          )
-                                        ],
-                                      ),
-                                    );
-                            }),
-                          ),
-                          Text('University Rankings')
-
-                          // GridView(
-                          //   gridDelegate:
-                          //       const SliverGridDelegateWithFixedCrossAxisCount(
-                          //           childAspectRatio: (1 / .5),
-                          //           crossAxisCount: 2),
+                          // ListView(
                           //   shrinkWrap: true,
-                          //   physics: const NeverScrollableScrollPhysics(),
-                          //   children: List.generate(
-                          //       12,
-                          //       (index) => Padding(
-                          //             padding: const EdgeInsets.all(8.0),
-                          //             child: Container(
-                          //               // color: Colors.amber,
-                          //               child: Row(
+                          //   physics: NeverScrollableScrollPhysics(),
+                          //   children: List.generate(6, (index) {
+                          //     log('${width / 2.74}');
+                          //     return width > 359
+                          //         ? Column(
+                          //             children: [
+                          //               Row(
                           //                 children: [
-                          // SvgPicture.asset(
-                          //   'assets/icons/buildings.svg',
-                          //   // ignore: deprecated_member_use
-                          //   color: Colors.grey,
-                          //   height: 18,
-                          //   width: 18,
-                          // ),
-                          //                   commonWidth8,
                           //                   Container(
-                          //                     width: width > 321 ? 98 : 75,
-                          //                     child: Text(
-                          //                       'Sports Complex',
-                          // style: GoogleFont
-                          //     .courcesDetailsColumnSecText,
-                          //                       maxLines: 2,
-                          //                       overflow: TextOverflow.ellipsis,
+                          //                     width: width / 2.74,
+                          //                     height: 60,
+                          //                     child: Row(
+                          //                       children: [
+                          //                         SvgPicture.asset(
+                          //                           'assets/icons/buildings.svg',
+                          //                           // ignore: deprecated_member_use
+                          //                           color: Skymark.greyColor,
+                          //                           height: 20,
+                          //                           width: 20,
+                          //                         ),
+                          //                         commonWidth15,
+                          //                         Text(
+                          //                           'Sports Complex',
+                          //                           style: GoogleFont
+                          //                               .courcesDetailsColumnSecText,
+                          //                         )
+                          //                       ],
                           //                     ),
-                          //                   )
+                          //                   ),
+                          //                   commonWidth15,
+                          //                   SizedBox(
+                          //                     width: width / 2.74,
+                          //                     height: 60,
+                          //                     child: Row(
+                          //                       children: [
+                          //                         SvgPicture.asset(
+                          //                           'assets/icons/buildings.svg',
+                          //                           // ignore: deprecated_member_use
+                          //                           color: Skymark.greyColor,
+                          //                           height: 20,
+                          //                           width: 20,
+                          //                         ),
+                          //                         commonWidth15,
+                          //                         Text(
+                          //                           'Sports Complex',
+                          //                           style: GoogleFont
+                          //                               .courcesDetailsColumnSecText,
+                          //                         )
+                          //                       ],
+                          //                     ),
+                          //                   ),
                           //                 ],
                           //               ),
+                          //               const Divider(),
+                          //               commonHeight5,
+                          //             ],
+                          //           )
+                          //         : SizedBox(
+                          //             width: width / 2.74,
+                          //             height: 60,
+                          //             child: Row(
+                          //               children: [
+                          //                 SvgPicture.asset(
+                          //                   'assets/icons/buildings.svg',
+                          //                   // ignore: deprecated_member_use
+                          //                   color: Skymark.greyColor,
+                          //                   height: 20,
+                          //                   width: 20,
+                          //                 ),
+                          //                 commonWidth15,
+                          //                 Text(
+                          //                   'Sports Complex',
+                          //                   style: GoogleFont
+                          //                       .courcesDetailsColumnSecText,
+                          //                 )
+                          //               ],
                           //             ),
-                          //           )),
-                          // )
+                          //           );
+                          //   }),
+                          // ),
+                          // Text('University Rankings'),
+
+                          FacilitiesListWidget(width: width),
+                          commonHeight15,
+
+                          Text(
+                            'University Rankings',
+                            style: GoogleFont.myAccountUserNameStyle,
+                          ),
+
+                          commonHeight15,
+
+                          UniversityRankingWidget(width: width),
+
+                          commonHeight15,
+
+                          GestureDetector(
+                              onTap: () {}, child: const BrochureButtonWidget())
                         ],
                       ),
                     )
                   ],
-                )
+                ),
+                commonHeight20,
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  width: double.infinity,
+                  height: 141,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Skymark.whiteColor),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Contact Info',
+                        style: GoogleFont.myAccountUserNameStyle,
+                      ),
+                      commonHeight10,
+                      ContactInfoWidget(
+                          svgIcons: 'assets/icons/call-calling.svg',
+                          textData: '+44 131 650 1000'),
+                      commonHeight10,
+                      ContactInfoWidget(
+                          svgIcons: 'assets/icons/sms-edit.svg',
+                          textData: 'supportteam@ed.ac.uk'),
+                      commonHeight10,
+                      ContactInfoWidget(
+                          svgIcons: 'assets/icons/chrome.svg',
+                          textData: 'www.ed.ac.uk'),
+                    ],
+                  ),
+                ),
+                commonHeight15,
+                GestureDetector(
+                    onTap: () {},
+                    child: const CommonButtonLogin(
+                        buttonText: 'View all Courses')),
+                commonHeight15,
               ],
             ),
           ))
         ],
       ),
+    );
+  }
+}
+
+class ContactInfoWidget extends StatelessWidget {
+  const ContactInfoWidget({
+    super.key,
+    required this.svgIcons,
+    required this.textData,
+  });
+
+  final String svgIcons;
+  final String textData;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        SvgPicture.asset(
+          svgIcons,
+          width: 16,
+          height: 16,
+        ),
+        commonWidth10,
+        Text(
+          textData,
+          style: GoogleFont.courcesDetailsColumnSecText,
+        )
+      ],
+    );
+  }
+}
+
+class BrochureButtonWidget extends StatelessWidget {
+  const BrochureButtonWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      height: 56,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10), color: Skymark.whitef2),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SvgPicture.asset('assets/icons/document-text.svg'),
+          commonWidth8,
+          Text(
+            'Download brochure',
+            style: GoogleFont.myAccountScreenLogOutButtontext,
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class UniversityRankingWidget extends StatelessWidget {
+  const UniversityRankingWidget({
+    super.key,
+    required this.width,
+  });
+
+  final double width;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      children: List.generate(5, (index) {
+        return Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Row(
+                children: [
+                  Container(
+                    width: 42,
+                    height: 42,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Skymark.whitef2),
+                    child: Center(
+                      child: Text(
+                        '#$index',
+                        style: GoogleFont.universityRankingsLeadingTextStyle,
+                      ),
+                    ),
+                  ),
+                  commonWidth10,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'University Rankings',
+                        style: GoogleFont.homeTileHeadTextStyle,
+                      ),
+                      SizedBox(
+                        width: width > 359 ? width / 1.6 : 185,
+                        child: Text(
+                          'ARWU (Shanghai Ranking) 2022',
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style:
+                              GoogleFont.destinationDetailDiscriptionStyleBlack,
+                        ),
+                      )
+                    ],
+                  )
+                ],
+              ),
+            ),
+            index == 4 ? const SizedBox() : const Divider()
+          ],
+        );
+      }),
+    );
+  }
+}
+
+class FacilitiesListWidget extends StatelessWidget {
+  const FacilitiesListWidget({
+    super.key,
+    required this.width,
+  });
+
+  final double width;
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          childAspectRatio: (1 / .5), crossAxisCount: 2),
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      children: List.generate(12, (index) {
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              SvgPicture.asset(
+                'assets/icons/buildings.svg',
+                // ignore: deprecated_member_use
+                color: Colors.grey,
+                height: 18,
+                width: 18,
+              ),
+              commonWidth8,
+              SizedBox(
+                width: width > 321 ? 98 : 75,
+                child: Text(
+                  'Sports Complex',
+                  style: GoogleFont.courcesDetailsColumnSecText,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ],
+          ),
+        );
+      }),
     );
   }
 }
